@@ -32,20 +32,26 @@ object UserBasedCF {
     //       |
     // user  |
     val ratings=new CoordinateMatrix(parsedData)
-    val matrix=ratings.transpose().toRowMatrix()// RowMatrix只能计算列之间的相似度
+    val matrix=ratings.transpose().toRowMatrix()// RowMatrix只能计算列之间的相似度，是cosine sim
     val similarities=matrix.columnSimilarities(0)// 精确的用户间的相似度
+
     // estimate user 1->item 1
-    val ratingsOfUser1=ratings.toRowMatrix().rows.collect()(0).toArray// 用户1的所有评分
-    val avgRatingOfUser1=ratingsOfUser1.sum/ratingsOfUser1.size
+//    val ratingsOfUser1=ratings.toRowMatrix().rows.collect()(0).toArray// 用户1的所有评分
+//    val avgRatingOfUser1=ratingsOfUser1.sum/ratingsOfUser1.size
 
     val ratingsToItem1=matrix.rows.collect()(0).toArray.drop(1)// 其他用户对物品1的评分
-    val statisticSummary=matrix.computeColumnSummaryStatistics()
-    val avgRatingOfUser1=statisticSummary.mean.toArray(0) // 用户1的平均评分
-    val avgRatingsOfUser=statisticSummary.mean.toArray.drop(1)// 所有用户的平均评分
+    val columnsMean=matrix.computeColumnSummaryStatistics().mean
+    val avgRatingOfUser1=columnsMean.toArray(0) // 用户1的平均评分
+    val avgRatingsOfUser=columnsMean.toArray.drop(1)// 所有用户的平均评分
+    println(avgRatingOfUser1)// 3
+    avgRatingsOfUser.foreach(println)// [3,3,3]
 
     val weights=similarities.entries.filter(_.i==0).sortBy(_.j).map(_.value).collect()//　用户１和其他用户的相似度
+    weights.foreach(println)// 1.0 0.38 0.38
     val weightedR=(0 to 2).map(t => weights(t)*(ratingsToItem1(t)-avgRatingsOfUser(t))).sum/weights.sum
 
     println("rating of user 1 to item 1 is:"+(avgRatingOfUser1+weightedR))
+    // rating of user 1 to item 1 is:3.2608695652173916
+
   }
 }
