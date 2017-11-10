@@ -1,4 +1,4 @@
-package org.iscas.other
+package org.iscas.algorithm
 
 import org.apache.spark.sql.SparkSession
 import org.iscas.common.Consts

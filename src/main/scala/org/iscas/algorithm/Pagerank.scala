@@ -1,7 +1,8 @@
-package org.iscas.other
+package org.iscas.algorithm
 
 import org.apache.spark.HashPartitioner
 import org.apache.spark.sql.SparkSession
+import org.iscas.common.Consts
 
 object Pagerank {
   /**
@@ -9,7 +10,7 @@ object Pagerank {
     * @param args
     */
   def main(args:Array[String]):Unit={
-    val sc=SparkSession.builder().master("spark://133.133.30.12:7077").appName("page rank").getOrCreate()
+    val sc=SparkSession.builder().master(Consts.MASTER).appName("page rank").getOrCreate()
     val links=sc.sparkContext.parallelize(
       List(
         ("A",List("B","C")),

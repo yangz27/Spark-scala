@@ -19,7 +19,7 @@ object ItemBasedCF {
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")
 
-    val data=sc.textFile("hdfs://master:9000/user/lucio35/test.data")
+    val data=sc.textFile(Consts.HDFS+"/user/lucio35/test.data")
     val parsedData=data.map(_.split(',') match {
       case Array(user,item,rate) => MatrixEntry(user.toLong-1,item.toLong-1,rate.toDouble)
     }).cache()

@@ -4,7 +4,11 @@ import org.apache.spark.mllib.linalg.distributed.{CoordinateMatrix, MatrixEntry}
 import org.apache.spark.sql.SparkSession
 import org.iscas.common.Consts
 
-object Svd {
+object SVD {
+  /**
+    * SVD推荐
+    * @param args
+    */
   def main(args: Array[String]): Unit = {
     val spark=SparkSession
       .builder()
@@ -14,7 +18,7 @@ object Svd {
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")
 
-    val data=sc.textFile("hdfs://master:9000/user/lucio35/test.data")
+    val data=sc.textFile(Consts.MASTER+"/user/lucio35/test.data")
     val parsedData=data.map(_.split(',') match {
       case Array(user,item,rate) => MatrixEntry(user.toLong-1,item.toLong-1,rate.toDouble)
     }).cache()
