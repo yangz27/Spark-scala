@@ -10,7 +10,7 @@ object Pagerank {
     * @param args
     */
   def main(args:Array[String]):Unit={
-    val sc=SparkSession.builder().master(Consts.MASTER).appName("page rank").getOrCreate()
+    val sc=SparkSession.builder().master(Consts.MASTER).appName("Pagerank").getOrCreate()
     val links=sc.sparkContext.parallelize(
       List(
         ("A",List("B","C")),

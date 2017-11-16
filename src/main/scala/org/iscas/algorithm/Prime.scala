@@ -13,7 +13,7 @@ object Prime {
     val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("prime")
+      .appName("Prime")
       .getOrCreate()
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")
@@ -24,7 +24,7 @@ object Prime {
       .map(x=>(x,(2 to (n/x))))
       .flatMap(kv=>kv._2.map(_*kv._1))
     val prime=sc.parallelize(2 to n,8).subtract(composite)
-    print(prime.count())
+    println(prime.count())
 
   }
 }

@@ -14,7 +14,7 @@ object BasicQuery {
     val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("basic-query")
+      .appName("BasicQuery")
       .getOrCreate()
     val sc=spark.sparkContext
     val sqlC=spark.sqlContext

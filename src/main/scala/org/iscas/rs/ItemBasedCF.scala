@@ -14,7 +14,7 @@ object ItemBasedCF {
     val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("item based cf")
+      .appName("ItemBasedCF")
       .getOrCreate()
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")

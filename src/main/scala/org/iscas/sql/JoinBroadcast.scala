@@ -15,7 +15,7 @@ object JoinBroadcast {
         val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("basic-query")
+      .appName("JoinBroadcast")
       .getOrCreate()
     val sc=spark.sparkContext
     val sqlC=spark.sqlContext

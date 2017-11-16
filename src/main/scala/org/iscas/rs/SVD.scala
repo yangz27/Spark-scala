@@ -13,7 +13,7 @@ object SVD {
     val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("item based cf")
+      .appName("SVD")
       .getOrCreate()
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")

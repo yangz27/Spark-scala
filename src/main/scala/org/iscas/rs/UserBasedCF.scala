@@ -16,7 +16,7 @@ object UserBasedCF {
     val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("user-based cf")
+      .appName("UserBasedCF")
       .getOrCreate()
     val sc=spark.sparkContext
     sc.setLogLevel("ERROR")

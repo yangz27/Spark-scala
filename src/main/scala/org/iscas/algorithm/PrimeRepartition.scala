@@ -10,20 +10,22 @@ object PrimeRepartition {
     */
   def main(args: Array[String]): Unit = {
     // https://www.iteblog.com/archives/1695.html
-    val sc=SparkSession
+    val spark=SparkSession
       .builder()
       .master(Consts.MASTER)
-      .appName("prime")
+      .appName("PrimeRepartition")
       .getOrCreate()
+    val sc=spark.sparkContext
+    sc.setLogLevel("ERROR")
+
     val n=2000000
     val composite=sc
-      .sparkContext
       .parallelize(2 to n,8)
       .map(x=>(x,(2 to (n/x))))
       .repartition(8)
       .flatMap(kv=>kv._2.map(_*kv._1))
-    val prime=sc.sparkContext.parallelize(2 to n,8).subtract(composite)
-    print(prime.count())
+    val prime=sc.parallelize(2 to n,8).subtract(composite)
+    println(prime.count())
 
   }
 }
