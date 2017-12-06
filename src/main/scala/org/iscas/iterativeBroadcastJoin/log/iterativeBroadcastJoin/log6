@@ -1,0 +1,97 @@
+  10.1集群
+
+  partitions=200
+  keys=100000
+  multiplier=100
+
+  # Generating uniform 116675000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=100, rows=116675000
+  # Elapsed time: 56 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=100, rows=116675000
+  # Elapsed time: 62 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=100, rows=116675000
+  # Elapsed time: 54 sec
+  # Generating uniform 233350000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=200, rows=233350000
+  # Elapsed time: 70 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=200, rows=233350000
+  # Elapsed time: 82 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=200, rows=233350000
+  # Elapsed time: 70 sec
+  # Generating uniform 350025000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=300, rows=350025000
+  # Elapsed time: 85 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=300, rows=350025000
+  # Elapsed time: 101 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=300, rows=350025000
+  # Elapsed time: 85 sec
+  # Generating uniform 466700000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=400, rows=466700000
+  # Elapsed time: 98 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=400, rows=466700000
+  # Elapsed time: 123 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=400, rows=466700000
+  # Elapsed time: 91 sec
+  # Generating uniform 583375000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=500, rows=583375000
+  # Elapsed time: 115 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=500, rows=583375000
+  # Elapsed time: 142 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=500, rows=583375000
+  # Elapsed time: 108 sec
+  # Generating uniform 700050000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=600, rows=700050000
+  # Elapsed time: 128 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=600, rows=700050000
+  # Elapsed time: 167 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=600, rows=700050000
+  # Elapsed time: 72 sec
+  # Generating uniform 816725000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=700, rows=816725000
+  # Elapsed time: 140 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=700, rows=816725000
+  # Elapsed time: 179 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=700, rows=816725000
+  # Elapsed time: 74 sec
+  # Generating uniform 933400000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=800, rows=933400000
+  # Elapsed time: 150 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=800, rows=933400000
+  # Elapsed time: 204 sec
+  17/12/01 16:14:30 ERROR LiveListenerBus: SparkListenerBus has already stopped! Dropping event SparkListenerExecutorMetricsUpdate(12,WrappedArray())
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=800, rows=933400000
+  # Elapsed time: 79 sec
+  # Generating uniform 1050075000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=100000, multiplier=900, rows=1050075000
+  # Elapsed time: 163 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=100000, multiplier=900, rows=1050075000
+  # Elapsed time: 209 sec
+  org.iscas.iterativeBroadcastJoin.data.UniformDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=100000, multiplier=900, rows=1050075000
+  # Elapsed time: 92 sec

@@ -30,13 +30,13 @@ object SVD {
     // user  |
 
     val svd=ratings.toRowMatrix().computeSVD(2,true)// 计算svd，返回奇异值个数为2
-    // estimate user 1 -> item 1
+    // estimate user SliceJoin-1 -> item SliceJoin-1
     val score=(0 to 1).map(t => svd.U.rows.collect()(0)(t)*svd.V.transpose.toArray(t))// U是RowMatrix，V是Matrix
-    println("rating of user 1 to item 1 is:"+score.sum*svd.s(0))
+    println("rating of user SliceJoin-1 to item SliceJoin-1 is:"+score.sum*svd.s(0))
     // 如果不乘svd.s(0)，是如下的结果，可以看出，SVD做推荐如果没有填空缺值或者用0替代，效果很不好
-    // rating of user 1 to item 1 is:0.5000000000000004
+    // rating of user SliceJoin-1 to item SliceJoin-1 is:0.5000000000000004
     // 乘svd.s(0)
-    // rating of user 1 to item 1 is:6.000000000000004
+    // rating of user SliceJoin-1 to item SliceJoin-1 is:6.000000000000004
 
   }
 }

@@ -1,0 +1,62 @@
+  10.1集群
+
+  不同模型分开submit
+
+  partitions=200
+  keys=10000
+  multiplier=100
+
+  # Generating skewed 9366800 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=100, rows=9366800
+  # Elapsed time: 22 sec
+  # Generating skewed 18733600 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=200, rows=18733600
+  # Elapsed time: 23 sec
+  # Generating skewed 28100400 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=300, rows=28100400
+  # Elapsed time: 23 sec
+  # Generating skewed 37467200 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=400, rows=37467200
+  # Elapsed time: 23 sec
+  # Generating skewed 46834000 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=500, rows=46834000
+  # Elapsed time: 24 sec
+  # Generating skewed 56200800 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=600, rows=56200800
+  # Elapsed time: 25 sec
+  # Generating skewed 65567600 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=700, rows=65567600
+  # Elapsed time: 25 sec
+  # Generating skewed 74934400 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=800, rows=74934400
+  # Elapsed time: 26 sec
+  # Generating skewed 84301200 rows
+  # persist large table
+  # create medium table
+  # persist medium table
+  org.iscas.sliceJoin.data.SkewedDataGenerator$@55b699ef : SliceJoinType(), kyes=10000, multiplier=900, rows=84301200
+  # Elapsed time: 26 sec

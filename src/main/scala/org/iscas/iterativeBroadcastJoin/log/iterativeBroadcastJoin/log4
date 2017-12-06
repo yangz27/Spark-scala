@@ -1,0 +1,76 @@
+  10.1集群
+
+  partitions=200
+  keys=1000000
+  multiplier=5
+
+# Generating skewed 69850170 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=5, rows=69850170
+# Elapsed time: 66 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=5, rows=69850170
+# Elapsed time: 73 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=5, rows=69850170
+# Elapsed time: 50 sec
+# Generating skewed 139700340 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=10, rows=139700340
+# Elapsed time: 101 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=10, rows=139700340
+# Elapsed time: 102 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=10, rows=139700340
+# Elapsed time: 62 sec
+# Generating skewed 209550510 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=15, rows=209550510
+# Elapsed time: 136 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=15, rows=209550510
+# Elapsed time: 131 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=15, rows=209550510
+# Elapsed time: 71 sec
+# Generating skewed 279400680 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=20, rows=279400680
+# Elapsed time: 136 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=20, rows=279400680
+# Elapsed time: 167 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=20, rows=279400680
+# Elapsed time: 86 sec
+# Generating skewed 349250850 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=25, rows=349250850
+# Elapsed time: 194 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=25, rows=349250850
+# Elapsed time: 225 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=25, rows=349250850
+# Elapsed time: 139 sec
+# Generating skewed 419101020 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=30, rows=419101020
+# Elapsed time: 214 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=30, rows=419101020
+# Elapsed time: 324 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=30, rows=419101020
+# Elapsed time: 107 sec
+# Generating skewed 488951190 rows
+# persist large table
+# create medium table
+# persist medium table
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=2, kyes=1000000, multiplier=35, rows=488951190
+# Elapsed time: 310 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : IterativeBroadcastJoinType(), passes=3, kyes=1000000, multiplier=35, rows=488951190
+# Elapsed time: 304 sec
+org.iscas.iterativeBroadcastJoin.data.SkewedDataGenerator$@55b699ef : SortMergeJoinType(), passes=3, kyes=1000000, multiplier=35, rows=488951190
+# Elapsed time: 118 sec

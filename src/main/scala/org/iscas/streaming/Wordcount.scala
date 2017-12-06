@@ -23,9 +23,9 @@ object Wordcount {
     val ssc=new StreamingContext(conf,Seconds(5))// batch interval=5s
     /**
       * 创建Spark Streaming 输入数据来源：input Stream
-      * 1.数据输入来源可以基于File、HDFS、Flume、Kafka、Socket
+      * SliceJoin-1.数据输入来源可以基于File、HDFS、Flume、Kafka、Socket
       *
-      * 2.在这里我们指定数据来源于网络Socket端口,
+      * SliceJoin-2.在这里我们指定数据来源于网络Socket端口,
       * Spark Streaming连接上该端口并在运行的时候一直监听该端口的数据（当然该端口服务首先必须存在，并且在后续会根据业务需要不断的有数据产生）。
       *
       * 有数据和没有数据 在处理逻辑上没有影响（在程序看来都是数据）

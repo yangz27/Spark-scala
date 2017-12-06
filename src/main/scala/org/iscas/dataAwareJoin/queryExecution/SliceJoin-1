@@ -1,0 +1,68 @@
+println(out.queryExecution)
+这是原始的SliceJoin算法
+
+== Parsed Logical Plan ==
+Union
+:- Project [key#175, label#179]
+:  +- Project [key#175, label#179, pass#180]
+:     +- Join LeftOuter, (key#175 = key#178)
+:        :- Filter <function1>.apply
+:        :  +- Relation[key#175] parquet
+:        +- Relation[key#178,label#179,pass#180] parquet
++- Project [key#175, label#179]
+   +- Project [key#175, label#179, pass#180]
+      +- Join LeftOuter, (key#175 = key#178)
+         :- Filter <function1>.apply
+         :  +- Relation[key#175] parquet
+         +- Relation[key#178,label#179,pass#180] parquet
+
+== Analyzed Logical Plan ==
+key: int, label: string
+Union
+:- Project [key#175, label#179]
+:  +- Project [key#175, label#179, pass#180]
+:     +- Join LeftOuter, (key#175 = key#178)
+:        :- Filter <function1>.apply
+:        :  +- Relation[key#175] parquet
+:        +- Relation[key#178,label#179,pass#180] parquet
++- Project [key#175, label#179]
+   +- Project [key#175, label#179, pass#180]
+      +- Join LeftOuter, (key#175 = key#178)
+         :- Filter <function1>.apply
+         :  +- Relation[key#175] parquet
+         +- Relation[key#178,label#179,pass#180] parquet
+
+== Optimized Logical Plan ==
+Union
+:- Project [key#175, label#179]
+:  +- Join LeftOuter, (key#175 = key#178)
+:     :- Filter <function1>.apply
+:     :  +- InMemoryRelation [key#175], true, 10000, StorageLevel(disk, memory, 1 replicas)
+:     :     :  +- *BatchedScan parquet [key#175] Format: ParquetFormat, InputPaths: hdfs://master:9000/user/lijie/table_large.parquet, PartitionFilters: [], PushedFilters: [], ReadSchema: struct<key:int>
+:     +- Project [key#178, label#179]
+:        +- Relation[key#178,label#179,pass#180] parquet
++- Project [key#175, label#179]
+   +- Join LeftOuter, (key#175 = key#178)
+      :- Filter <function1>.apply
+      :  +- InMemoryRelation [key#175], true, 10000, StorageLevel(disk, memory, 1 replicas)
+      :     :  +- *BatchedScan parquet [key#175] Format: ParquetFormat, InputPaths: hdfs://master:9000/user/lijie/table_large.parquet, PartitionFilters: [], PushedFilters: [], ReadSchema: struct<key:int>
+      +- Project [key#178, label#179]
+         +- Relation[key#178,label#179,pass#180] parquet
+
+== Physical Plan ==
+Union
+:- *Project [key#175, label#179]
+:  +- *BroadcastHashJoin [key#175], [key#178], LeftOuter, BuildRight
+:     :- *Filter <function1>.apply
+:     :  +- InMemoryTableScan [key#175], [<function1>.apply]
+:     :     :  +- InMemoryRelation [key#175], true, 10000, StorageLevel(disk, memory, 1 replicas)
+:     :     :     :  +- *BatchedScan parquet [key#175] Format: ParquetFormat, InputPaths: hdfs://master:9000/user/lijie/table_large.parquet, PartitionFilters: [], PushedFilters: [], ReadSchema: struct<key:int>
+:     +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))
+:        +- *BatchedScan parquet [key#178,label#179] Format: ParquetFormat, InputPaths: hdfs://master:9000/user/lijie/table_medium.parquet, PartitionFilters: [], PushedFilters: [], ReadSchema: struct<key:int,label:string>
++- *Project [key#175, label#179]
+   +- *BroadcastHashJoin [key#175], [key#178], LeftOuter, BuildRight
+      :- *Filter <function1>.apply
+      :  +- InMemoryTableScan [key#175], [<function1>.apply]
+      :     :  +- InMemoryRelation [key#175], true, 10000, StorageLevel(disk, memory, 1 replicas)
+      :     :     :  +- *BatchedScan parquet [key#175] Format: ParquetFormat, InputPaths: hdfs://master:9000/user/lijie/table_large.parquet, PartitionFilters: [], PushedFilters: [], ReadSchema: struct<key:int>
+      +- ReusedExchange [key#178, label#179], BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint)))

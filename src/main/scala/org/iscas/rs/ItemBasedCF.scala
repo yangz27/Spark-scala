@@ -33,7 +33,7 @@ object ItemBasedCF {
 
 //    val ratingsOfItem1=ratings.transpose().toRowMatrix().rows.collect()(0).toArray
 //    val avgRatingToItem1=ratingsOfItem1.sum/ratingsOfItem1.size// 物品1的平均得分
-    // estimate user 1->item 1
+    // estimate user SliceJoin-1->item SliceJoin-1
 
     val ratingsOfUser1=ratings.toRowMatrix().rows.collect()(0).toArray.drop(1)// 用户1对其他物品的打分
     val columnsMean=ratings.toRowMatrix().computeColumnSummaryStatistics().mean
@@ -44,9 +44,9 @@ object ItemBasedCF {
 
     val weights=similarities.entries.filter(_.i==0).sortBy(_.j).map(_.value).collect()// 物品1和其他物品的相似度
     val weightedR=(0 to 2).map(t => weights(t)*(ratingsOfUser1(t)-avgRatingOfItem(t))).sum/weights.sum
-    weights.foreach(println)// [0.38,1,0.38]
+    weights.foreach(println)// [0.38,SliceJoin-1,0.38]
 
-    println("rating of user 1 to item 1 is:"+(avgRatingOfItem1+weightedR))
-    // rating of user 1 to item 1 is:3.2608695652173916
+    println("rating of user SliceJoin-1 to item SliceJoin-1 is:"+(avgRatingOfItem1+weightedR))
+    // rating of user SliceJoin-1 to item SliceJoin-1 is:3.2608695652173916
   }
 }
