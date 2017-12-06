@@ -4,4 +4,7 @@
 * SQL
 * Streaming
 * 多线程
+* Mllib
+* Join算法分析
+* 序列化实例
 * 其他
